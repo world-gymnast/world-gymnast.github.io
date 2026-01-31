@@ -74,7 +74,7 @@
       <figure class="image hero-figure">
         <img src="./static/images/main_figure.png" alt="World-Gymnast overview">
       </figure>
-      <p class="subtitle has-text-centered">
+      <p class="subtitle has-text-justified">
         The policy is trained on tasks specified by an initial frame and language instruction. During training, the policy
         outputs actions which are then passed to the world model which generates imagined rollouts. These rollouts are then
         passed to a VLM which returns a binary task completion reward. This reward is used to update the policy. Once trained,
@@ -127,9 +127,9 @@
     <h2 class="title is-3 section-title">Experiments</h2>
     <div class="content">
       <p>
-        World-Gymnast is evaluated on the Bridge robot setup and AutoEval real-robot tasks. Below are the reported success rates.
+        World-Gymnast is evaluated on real-robot tasks in the Bridge setup. Below are the reported success rates.
       </p>
-      <h3 class="title is-5">AutoEval: Simulator RL vs World-Gymnast</h3>
+      <h3 class="title is-5">Real-robot evaluation: Simulator RL vs World-Gymnast</h3>
       <table class="table is-fullwidth is-striped">
         <thead>
           <tr>
@@ -199,6 +199,35 @@
           </tr>
         </tbody>
       </table>
+      <div class="content">
+        <h3 class="title is-5">Real-robot: Put eggplant into blue sink</h3>
+        <div class="columns is-multiline is-variable is-4">
+          <div class="column is-one-third">
+            <div class="video-card">
+              <video controls playsinline preload="metadata">
+                <source src="./static/videos/rl_eggplant.mp4" type="video/mp4">
+              </video>
+              <p class="video-caption">World-Gymnast (RL)</p>
+            </div>
+          </div>
+          <div class="column is-one-third">
+            <div class="video-card">
+              <video controls playsinline preload="metadata">
+                <source src="./static/videos/simpler_eggplant.mp4" type="video/mp4">
+              </video>
+              <p class="video-caption">SIMPLER (simulator RL)</p>
+            </div>
+          </div>
+          <div class="column is-one-third">
+            <div class="video-card">
+              <video controls playsinline preload="metadata">
+                <source src="./static/videos/ctrl_world_eggplant.mp4" type="video/mp4">
+              </video>
+              <p class="video-caption">Iter-SFT</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -295,6 +324,24 @@
         task from 62 ± 6% to 100 ± 0%. The framework also supports Dyna-style iterative updates: real-robot rollouts are used to
         refine the world model, which then yields higher-quality imagined rollouts and further policy improvements.
       </p>
+      <div class="columns is-multiline is-variable is-4">
+        <div class="column is-half">
+          <div class="video-card">
+            <video controls playsinline preload="metadata">
+              <source src="./static/videos/ttt_autoeval.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Test-time training policy (real world)</p>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="video-card">
+            <video controls playsinline preload="metadata">
+              <source src="./static/videos/dyna_autoeval.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Iteratively improved policy (real world)</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -312,7 +359,7 @@
             <video controls playsinline preload="metadata">
               <source src="./static/videos/real.mp4" type="video/mp4">
             </video>
-            <p class="video-caption">Real robot (AutoEval)</p>
+            <p class="video-caption">Real robot</p>
           </div>
         </div>
         <div class="column is-half">
