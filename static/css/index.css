@@ -1,5 +1,7 @@
 body {
   font-family: 'Noto Sans', sans-serif;
+  background: #f7f5f2;
+  color: #1f1f1f;
 }
 
 
@@ -49,6 +51,18 @@ body {
 
 .publication-title {
     font-family: 'Google Sans', sans-serif;
+}
+
+.hero-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.hero-icon img {
+  width: 56px;
+  height: 56px;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.12));
 }
 
 .publication-authors {
@@ -137,13 +151,14 @@ body {
 }
 
 .hero-figure img {
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  background: #f7f5f2;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
 }
 
 .video-card {
-  background: #fff;
-  border: 1px solid #e6e6e6;
+  background: #fbfaf8;
+  border: 1px solid #e6e1da;
   border-radius: 12px;
   padding: 0.75rem;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
@@ -159,6 +174,14 @@ body {
   margin-top: 0.5rem;
   font-size: 0.95rem;
   color: #555;
+}
+
+.section.is-light {
+  background: #f2eee8;
+}
+
+.table {
+  background: #fbfaf8;
 }
 
 

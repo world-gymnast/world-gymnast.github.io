@@ -25,6 +25,9 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
+          <div class="hero-icon">
+            <img src="./static/images/earth-svgrepo-com.svg" alt="Earth icon">
+          </div>
           <h1 class="title is-1 publication-title">World-Gymnast: Training Robots with Reinforcement Learning in a World Model</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">Ansh Kumar Sharma<sup>1</sup>,</span>
@@ -75,8 +78,8 @@
         <img src="./static/images/main_figure.png" alt="World-Gymnast overview">
       </figure>
       <p class="subtitle has-text-centered">
-        World-Gymnast fine-tunes vision-language-action policies by rolling out actions in a learned world model and scoring
-        trajectories with a vision-language model.
+        Method overview: roll out actions in a learned world model, score imagined trajectories with a vision-language model,
+        and update the policy with RL.
       </p>
     </div>
   </div>
@@ -120,13 +123,10 @@
     <h2 class="title is-3 section-title">Method</h2>
     <div class="content">
       <p>
-        World-Gymnast trains a policy by rolling out trajectories inside a learned world model (WorldGym). A vision-language
-        model assigns a binary success reward for each rollout, and Group Relative Policy Optimization (GRPO) updates the policy
-        using group-normalized advantages.
+        The method figure above summarizes the pipeline. World-Gymnast trains a policy by rolling out trajectories inside a
+        learned world model (WorldGym). A vision-language model assigns a binary success reward for each rollout, and Group
+        Relative Policy Optimization (GRPO) updates the policy using group-normalized advantages.
       </p>
-      <div class="notification is-light">
-        Method diagram coming soon. Share the pipeline figure and I will place it here.
-      </div>
     </div>
   </div>
 </section>
@@ -310,7 +310,7 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 section-title">Figure 3: World Model Rollout Fidelity</h2>
+    <h2 class="title is-3 section-title">World Model Rollout Fidelity</h2>
     <div class="content">
       <p>
         Comparison of rolling out the same action sequence in different environments.
