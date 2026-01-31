@@ -53,17 +53,6 @@ body {
     font-family: 'Google Sans', sans-serif;
 }
 
-.hero-icon {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0.75rem;
-}
-
-.hero-icon img {
-  width: 56px;
-  height: 56px;
-  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.12));
-}
 
 .publication-authors {
     font-family: 'Google Sans', sans-serif;

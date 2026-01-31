@@ -16,7 +16,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href="./static/images/earth-svgrepo-com.svg">
 </head>
 <body>
 
@@ -25,9 +25,6 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <div class="hero-icon">
-            <img src="./static/images/earth-svgrepo-com.svg" alt="Earth icon">
-          </div>
           <h1 class="title is-1 publication-title">World-Gymnast: Training Robots with Reinforcement Learning in a World Model</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">Ansh Kumar Sharma<sup>1</sup>,</span>
@@ -90,15 +87,19 @@
     <h2 class="title is-3 section-title">Abstract</h2>
     <div class="content has-text-justified">
       <p>
-        Robot learning from interacting with the physical world is bottlenecked by the cost of physical interaction. Two
-        alternatives—supervised fine-tuning from expert demonstrations and reinforcement learning in software simulation—are
-        limited by data availability and the sim-to-real gap. With the emergence of world models learned from real-world
-        video-action data, we ask whether training a policy in a world model can outperform supervised learning or simulator-based
-        RL on real robots. We propose World-Gymnast, which performs RL fine-tuning of a vision-language-action policy by rolling
-        out the policy in an action-conditioned video world model and rewarding rollouts with a vision-language model. On the
-        Bridge robot setup, World-Gymnast outperforms SFT by as much as 18x and outperforms software simulation by as much as 2x.
-        World-Gymnast also enables training on diverse language instructions and novel scenes, test-time training from a novel
-        frame, and iterative world model and policy improvement.
+        Robot learning from interacting with the physical world is fundamentally bottlenecked by the cost of physical interaction.
+        The two alternatives, supervised finetuning (SFT) from expert demonstrations and reinforcement learning (RL) in a
+        software-based simulator, are limited by the amount of expert data available and the sim-to-real gap for manipulation.
+        With the recent emergence of world models learned from real-world video-action data, we ask the question of whether
+        training a policy in a world model can be more effective than supervised learning or software simulation in achieving
+        better real-robot performance. We propose World-Gymnast, which performs RL finetuning of a vision-language-action (VLA)
+        policy by rolling out the policy in an action-conditioned video world model and rewarding the rollouts with a
+        vision-language model (VLM). On the Bridge robot setup, World-Gymnast outperforms SFT by as much as 18x and outperforms
+        software simulator by as much as 2x. More importantly, World-Gymnast demonstrates intriguing capabilities of RL with a
+        world model, including training on diverse language instructions and novel scenes from the world model, test-time
+        training in a novel scene, and online iterative world model and policy improvement. Our results suggest learning a world
+        model and training robot policies in the cloud could be the key to bridging the gap between robots that work in
+        demonstrations and robots that can work in anyone's household.
       </p>
     </div>
   </div>
@@ -349,19 +350,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 section-title">Limitations</h2>
-    <div class="content">
-      <p>
-        World-Gymnast can struggle when the initial frame is far from the world model's training distribution. It also relies on a
-        pretrained VLM for reward signals, which may hallucinate and produce suboptimal training signals. Improving reward models
-        and preventing reward hacking remain important future directions.
-      </p>
     </div>
   </div>
 </section>
