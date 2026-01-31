@@ -75,8 +75,11 @@
         <img src="./static/images/main_figure.png" alt="World-Gymnast overview">
       </figure>
       <p class="subtitle has-text-centered">
-        Method overview: roll out actions in a learned world model, score imagined trajectories with a vision-language model,
-        and update the policy with RL.
+        The policy is trained on tasks specified by an initial frame and language instruction. During training, the policy
+        outputs actions which are then passed to the world model which generates imagined rollouts. These rollouts are then
+        passed to a VLM which returns a binary task completion reward. This reward is used to update the policy. Once trained,
+        we evaluate the policy on real robots. The resulting real world rollouts (frame-action sequences) can be further used
+        to improve the world model on the particular environment.
       </p>
     </div>
   </div>
@@ -111,28 +114,15 @@
     <div class="content">
       <ul>
         <li>Introduce World-Gymnast, an RL framework that fine-tunes VLA policies inside a learned video world model with VLM-based rewards.</li>
-        <li>Demonstrate improved real-robot performance over SFT and simulator-based RL on Bridge/AutoEval tasks.</li>
-        <li>Show that training from any frame, novel language, and distractor-augmented scenes improves generalization.</li>
-        <li>Enable test-time training and iterative world-model/policy updates via a Dyna-style loop.</li>
+        <li>Demonstrate improved real-robot performance over SFT and simulator-based RL.</li>
+        <li>Show that training with distractor augmentation, novel language instructions, and additional tasks improves robustness and success.</li>
+        <li>Demonstrate test-time training from a novel frame and iterative world model + policy improvement via a Dyna-style loop.</li>
       </ul>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 section-title">Method</h2>
-    <div class="content">
-      <p>
-        The method figure above summarizes the pipeline. World-Gymnast trains a policy by rolling out trajectories inside a
-        learned world model (WorldGym). A vision-language model assigns a binary success reward for each rollout, and Group
-        Relative Policy Optimization (GRPO) updates the policy using group-normalized advantages.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="section is-light">
   <div class="container is-max-desktop">
     <h2 class="title is-3 section-title">Experiments</h2>
     <div class="content">
@@ -213,7 +203,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section is-light">
   <div class="container is-max-desktop">
     <h2 class="title is-3 section-title">Diverse Training Settings</h2>
     <div class="content">
@@ -296,7 +286,7 @@
   </div>
 </section>
 
-<section class="section is-light">
+<section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 section-title">Test-Time Training & Iterative Updates</h2>
     <div class="content">
