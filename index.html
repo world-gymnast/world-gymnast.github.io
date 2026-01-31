@@ -27,12 +27,12 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">World-Gymnast: Training Robots with Reinforcement Learning in a World Model</h1>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Ansh Kumar Sharma<sup>1</sup>,</span>
-            <span class="author-block">Yixiang Sun<sup>1</sup>,</span>
-            <span class="author-block">Ninghao Lu<sup>1</sup>,</span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/ansh-ks/">Ansh Kumar Sharma</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/yixiang-sun-79175324b/">Yixiang Sun</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://www.linkedin.com/in/ninghaolu/">Ninghao Lu</a><sup>1</sup>,</span>
             <span class="author-block">Yunzhe Zhang<sup>1</sup>,</span>
             <span class="author-block">Jiarao Liu<sup>2</sup>,</span>
-            <span class="author-block">Sherry Yang<sup>1,3</sup></span>
+            <span class="author-block"><a href="https://sherryy.github.io/">Sherry Yang</a><sup>1,3</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
@@ -130,81 +130,20 @@
         World-Gymnast is evaluated on real-robot tasks in the Bridge setup. Below are the reported success rates.
       </p>
       <h3 class="title is-5">Real-robot evaluation: Simulator RL vs World-Gymnast</h3>
-      <table class="table is-fullwidth is-striped">
-        <thead>
-          <tr>
-            <th>Task</th>
-            <th>SIMPLER</th>
-            <th>World-Gymnast</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Open the drawer</td>
-            <td>34 ± 7%</td>
-            <td>58 ± 4%</td>
-          </tr>
-          <tr>
-            <td>Close the drawer</td>
-            <td>74 ± 5%</td>
-            <td>62 ± 6%</td>
-          </tr>
-          <tr>
-            <td>Put eggplant into blue sink</td>
-            <td>32 ± 10%</td>
-            <td>72 ± 10%</td>
-          </tr>
-          <tr>
-            <td>Put eggplant into yellow basket</td>
-            <td>40 ± 10%</td>
-            <td>78 ± 2%</td>
-          </tr>
-        </tbody>
-      </table>
+      <figure class="image figure-panel">
+        <img src="./static/images/sim.png" alt="Real-robot evaluation: SIMPLER vs World-Gymnast results">
+      </figure>
 
       <h3 class="title is-5">Supervised Learning vs World-Gymnast</h3>
-      <table class="table is-fullwidth is-striped">
-        <thead>
-          <tr>
-            <th>Task</th>
-            <th>SFT</th>
-            <th>Iter-SFT</th>
-            <th>World-Gymnast</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Open the drawer</td>
-            <td>40 ± 10%</td>
-            <td>30 ± 10%</td>
-            <td>58 ± 4%</td>
-          </tr>
-          <tr>
-            <td>Close the drawer</td>
-            <td>62 ± 6%</td>
-            <td>60 ± 8%</td>
-            <td>62 ± 6%</td>
-          </tr>
-          <tr>
-            <td>Put eggplant into blue sink</td>
-            <td>4 ± 4%</td>
-            <td>10 ± 3%</td>
-            <td>72 ± 10%</td>
-          </tr>
-          <tr>
-            <td>Put eggplant into yellow basket</td>
-            <td>8 ± 4%</td>
-            <td>17 ± 17%</td>
-            <td>78 ± 2%</td>
-          </tr>
-        </tbody>
-      </table>
+      <figure class="image figure-panel">
+        <img src="./static/images/sft.png" alt="Real-robot evaluation: SFT vs Iter-SFT vs World-Gymnast results">
+      </figure>
       <div class="content">
         <h3 class="title is-5">Real-robot: Put eggplant into blue sink</h3>
         <div class="columns is-multiline is-variable is-4">
           <div class="column is-one-third">
             <div class="video-card">
-              <video controls playsinline preload="metadata">
+              <video autoplay muted loop controls playsinline preload="metadata">
                 <source src="./static/videos/rl_eggplant.mp4" type="video/mp4">
               </video>
               <p class="video-caption">World-Gymnast (RL)</p>
@@ -212,7 +151,7 @@
           </div>
           <div class="column is-one-third">
             <div class="video-card">
-              <video controls playsinline preload="metadata">
+              <video autoplay muted loop controls playsinline preload="metadata">
                 <source src="./static/videos/simpler_eggplant.mp4" type="video/mp4">
               </video>
               <p class="video-caption">SIMPLER (simulator RL)</p>
@@ -220,7 +159,7 @@
           </div>
           <div class="column is-one-third">
             <div class="video-card">
-              <video controls playsinline preload="metadata">
+              <video autoplay muted loop controls playsinline preload="metadata">
                 <source src="./static/videos/ctrl_world_eggplant.mp4" type="video/mp4">
               </video>
               <p class="video-caption">Iter-SFT</p>
@@ -270,8 +209,31 @@
           </tr>
         </tbody>
       </table>
-      <div class="notification is-light">
-        Qualitative rollouts and comparison figures coming soon.
+      <div class="columns is-multiline is-variable is-4">
+        <div class="column is-one-third">
+          <div class="video-card">
+            <video autoplay muted loop controls playsinline preload="metadata">
+              <source src="./static/videos/distractor.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Distractor training: put yellow corn on pink plate</p>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="video-card">
+            <video autoplay muted loop controls playsinline preload="metadata">
+              <source src="./static/videos/oodlang.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Novel language: put plate on drying rack</p>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="video-card">
+            <video autoplay muted loop controls playsinline preload="metadata">
+              <source src="./static/videos/scaled.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Scaled tasks: close fridge</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -288,7 +250,7 @@
       <div class="columns is-multiline is-variable is-4">
         <div class="column is-one-third">
           <div class="video-card">
-            <video controls playsinline preload="metadata">
+            <video autoplay muted loop controls playsinline preload="metadata">
               <source src="./static/videos/sftdist.mp4" type="video/mp4">
             </video>
             <p class="video-caption">SFT (distracted)</p>
@@ -296,7 +258,7 @@
         </div>
         <div class="column is-one-third">
           <div class="video-card">
-            <video controls playsinline preload="metadata">
+            <video autoplay muted loop controls playsinline preload="metadata">
               <source src="./static/videos/rldist.mp4" type="video/mp4">
             </video>
             <p class="video-caption">World-Gymnast (distracted)</p>
@@ -304,7 +266,7 @@
         </div>
         <div class="column is-one-third">
           <div class="video-card">
-            <video controls playsinline preload="metadata">
+            <video autoplay muted loop controls playsinline preload="metadata">
               <source src="./static/videos/distdist.mp4" type="video/mp4">
             </video>
             <p class="video-caption">World-Gymnast-Distract (success)</p>
@@ -327,7 +289,7 @@
       <div class="columns is-multiline is-variable is-4">
         <div class="column is-half">
           <div class="video-card">
-            <video controls playsinline preload="metadata">
+            <video autoplay muted loop controls playsinline preload="metadata">
               <source src="./static/videos/ttt_autoeval.mp4" type="video/mp4">
             </video>
             <p class="video-caption">Test-time training policy (real world)</p>
@@ -335,7 +297,7 @@
         </div>
         <div class="column is-half">
           <div class="video-card">
-            <video controls playsinline preload="metadata">
+            <video autoplay muted loop controls playsinline preload="metadata">
               <source src="./static/videos/dyna_autoeval.mp4" type="video/mp4">
             </video>
             <p class="video-caption">Iteratively improved policy (real world)</p>
@@ -356,7 +318,7 @@
       <div class="columns is-multiline is-variable is-4">
         <div class="column is-half">
           <div class="video-card">
-            <video controls playsinline preload="metadata">
+            <video autoplay muted loop controls playsinline preload="metadata">
               <source src="./static/videos/real.mp4" type="video/mp4">
             </video>
             <p class="video-caption">Real robot</p>
@@ -364,7 +326,7 @@
         </div>
         <div class="column is-half">
           <div class="video-card">
-            <video controls playsinline preload="metadata">
+            <video autoplay muted loop controls playsinline preload="metadata">
               <source src="./static/videos/simpler.mp4" type="video/mp4">
             </video>
             <p class="video-caption">SIMPLER (software simulator)</p>
@@ -372,7 +334,7 @@
         </div>
         <div class="column is-half">
           <div class="video-card">
-            <video controls playsinline preload="metadata">
+            <video autoplay muted loop controls playsinline preload="metadata">
               <source src="./static/videos/worldgym.mp4" type="video/mp4">
             </video>
             <p class="video-caption">WorldGym (pretrained world model)</p>
@@ -380,7 +342,7 @@
         </div>
         <div class="column is-half">
           <div class="video-card">
-            <video controls playsinline preload="metadata">
+            <video autoplay muted loop controls playsinline preload="metadata">
               <source src="./static/videos/dyna.mp4" type="video/mp4">
             </video>
             <p class="video-caption">World-Gymnast with online updates</p>

@@ -173,6 +173,21 @@ body {
   background: #fbfaf8;
 }
 
+.figure-panel {
+  margin: 1rem 0 1.5rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  background: #fbfaf8;
+  border: 1px solid #e6e1da;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+.figure-panel img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+}
+
 
 .interpolation-panel {
   background: #f5f5f5;
