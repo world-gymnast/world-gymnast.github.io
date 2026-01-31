@@ -127,6 +127,40 @@ body {
   margin: 0;
 }
 
+.section-title {
+  letter-spacing: -0.02em;
+}
+
+.hero-figure {
+  max-width: 980px;
+  margin: 0 auto 1.5rem;
+}
+
+.hero-figure img {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.video-card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 0.75rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+.video-card video {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.video-caption {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
 
 .interpolation-panel {
   background: #f5f5f5;
